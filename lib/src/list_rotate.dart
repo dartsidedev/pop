@@ -7,6 +7,14 @@ extension ListRotate<E> on List<E> {
   /// Important: this method modifies the original list. If you don't want to
   /// modify the list, use the [rotated] method.
   ///
+  /// ```dart
+  /// final values = [1, 2, 3, 4];
+  /// values.rotate(1);
+  ///
+  /// // The original list is modified!
+  /// print(values); // [4, 1, 2, 3]
+  /// ```
+  ///
   /// The [rotate] method takes the modulo [length] on [n], so it will not
   /// rotate needlessly.
   ///

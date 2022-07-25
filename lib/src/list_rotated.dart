@@ -1,28 +1,40 @@
-import 'package:pop/src/list_rotate.dart';
+import 'list_rotate.dart';
+import 'range.dart';
 
 extension ListRotated<E> on List<E> {
-  /// Creates a new list with the rotated values.
+  /// Creates an [Iterable] with the rotated values.
   ///
-  /// This method does not modify the original list, it returns a new list.
-  /// If you want to rotate in-place, use the [rotate] method.
-  ///
-  /// The created list is fixed-length if [growable] is set to `false`.
-  ///
-  /// Positive [n] rotates to the right. Negative [n] rotates to the left.
-  /// When [n] is equal to zero, the list will not be rotated.
+  /// This method does not modify the original list, it returns a new [Iterable]
+  /// (similarly how [reversed] returns an [Iterable].
   ///
   /// ```dart
-  /// print([1, 2, 3, 4].rotated(1)); // [4, 1, 2, 3]
-  /// print([1, 2, 3, 4].rotated(-1)); // [2, 3, 4, 1]
+  /// final values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  /// // It returns an Iterable!
+  /// print(values.rotated(3).take(4)); // [7, 8, 9, 1]
+  ///
+  /// // rotated doesn't modify the list!
+  /// print(values); // It is still: [1, 2, 3, 4, 5, 6, 7, 8, 9]
   /// ```
-  List<E> rotated(
-    int n, {
-    bool growable = true,
-  }) {
-    return List.generate(
-      length,
-      (i) => this[(i - n) % length],
-      growable: growable,
-    );
+  ///
+  /// If you want to rotate in-place, use the [rotate] method.
+  ///
+  /// Positive [n] rotates to the right. Negative [n] rotates to the left.
+  /// When [n % length] is equal to zero, the list will not be rotated.
+  ///
+  /// ```dart
+  /// // right
+  /// print([1, 2, 3, 4].rotated(1).toList()); // [4, 1, 2, 3]
+  ///
+  /// // left
+  /// print([1, 2, 3, 4].rotated(-1).toList()); // [2, 3, 4, 1]
+  ///
+  /// // noop
+  /// print([1, 2, 3, 4].rotated(4).toList()); // [1, 2, 3, 4]
+  /// ```
+  Iterable<E> rotated(int n) sync* {
+    final length = this.length;
+    for (final i in range(length)) {
+      yield this[(i - n) % length];
+    }
   }
 }
