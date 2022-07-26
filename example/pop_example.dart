@@ -38,15 +38,22 @@ void main() {
   swappedList.swap(1, 3);
   print(swappedList); // [0, 3, 2, 1]
 
+  // mSwap
+  final mSwappedList = [0, 1, 2, 3];
+  mSwappedList.mSwap(0, -1);
+  print(mSwappedList); // [3, 1, 2, 0]
+
   // times
   final timesList = ['a', 'b', 'c'];
   2.times(timesList.removeLast);
   print(timesList); // ['a']
 
+  // timesIndexed
   var counter = 0;
   4.timesIndexed((i) => counter += i); // 0 + 1 + 2 + 3
   print(counter); // 6
 
+  // removeFirst
   final removeFirstList = [0, 1, 2];
   final removedFirstValue = removeFirstList.removeFirst();
   print(removedFirstValue); // 0
