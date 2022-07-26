@@ -4,6 +4,7 @@
 library pop;
 
 export 'src/int_times.dart';
+export 'src/int_times_indexed.dart';
 export 'src/list_reverse.dart';
 export 'src/list_rotate.dart';
 export 'src/list_rotated.dart';

@@ -42,4 +42,8 @@ void main() {
   final timesList = ['a', 'b', 'c'];
   2.times(timesList.removeLast);
   print(timesList); // ['a']
+
+  var counter = 0;
+  4.timesIndexed((i) => counter += i); // 0 + 1 + 2 + 3
+  print(counter); // 6
 }
