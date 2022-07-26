@@ -46,4 +46,9 @@ void main() {
   var counter = 0;
   4.timesIndexed((i) => counter += i); // 0 + 1 + 2 + 3
   print(counter); // 6
+
+  final removeFirstList = [0, 1, 2];
+  final removedFirstValue = removeFirstList.removeFirst();
+  print(removedFirstValue); // 0
+  print(removeFirstList); // [1, 2]
 }
