@@ -53,9 +53,11 @@ void main() {
   4.timesIndexed((i) => counter += i); // 0 + 1 + 2 + 3
   print(counter); // 6
 
-  // removeFirst
-  final removeFirstList = [0, 1, 2];
-  final removedFirstValue = removeFirstList.removeFirst();
+  // removeFirst and addFirst
+  final firstList = [0, 1, 2];
+  final removedFirstValue = firstList.removeFirst();
   print(removedFirstValue); // 0
-  print(removeFirstList); // [1, 2]
+  print(firstList); // [1, 2]
+  firstList.addFirst(removedFirstValue);
+  print(firstList); // [0, 1, 2]
 }
