@@ -6,6 +6,10 @@
 
 [![Continuous Integration](https://github.com/dartsidedev/pop/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/dartsidedev/pop/actions) [![codecov](https://codecov.io/gh/dartsidedev/pop/branch/main/graph/badge.svg)](https://codecov.io/gh/dartsidedev/pop) [![pop](https://img.shields.io/pub/v/pop?label=pop&logo=dart)](https://pub.dev/packages/pop 'See pop package info on pub.dev') [![Published by dartside.dev](https://img.shields.io/static/v1?label=Published%20by&message=dartside.dev&logo=dart&logoWidth=30&color=40C4FF&labelColor=1d599b&labelWidth=100)](https://pub.dev/publishers/dartside.dev/packages) [![GitHub Stars Count](https://img.shields.io/github/stars/dartsidedev/pop?logo=github)](https://github.com/dartsidedev/pop 'Star me on GitHub!')
 
+## Disclaimer
+
+This package is still in its early phase of development: APIs might change, behavior might change, and classes and functions may be removed.
+
 ## Important links
 
 * [Read the source code and **star the repo** on GitHub](https://github.com/dartsidedev/pop)
