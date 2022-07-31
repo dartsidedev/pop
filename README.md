@@ -31,5 +31,30 @@ The `pop` package aims to complement these packages, and only "re-invent the whe
 ## Usage
 
 A detailed, beginner-friendly guide with examples is coming soon.
+
 For now, please refer to the [API docs](https://pub.dev/documentation/pop/latest/).
 I am doing my best to provide a great documentation with plenty of examples for every function, class and method of this package.
+
+Here are some examples of what this package provides.
+
+### `DefaultMap`
+
+```dart
+final string = 'mississippi'.split('');
+// Without DefaultMap
+final counterMap = <String, int>{};
+for (final char in string) {
+  if (!counterMap.containsKey(char)) counterMap[char] = 0;
+  counterMap[char] = counterMap[char]! + 1;
+}
+// With DefaultMap
+final counterMap = DefaultMap<String, int>(0);
+for (final char in string) counterMap[char] += 1;
+```
+
+## Contribution
+
+I'd appreciate you reading the docs. I did my best to provide stellar documentation, but sometimes it's just "not there yet".
+If you have usage examples, where the package made your code better, feel free to submit a docs improvement PR.
+If the description is not clear somewhere and you know how to make it better, open a PR.
+If existing behavior is surprising, please open an issue. We will see if we can make the code less surprising.

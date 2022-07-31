@@ -60,4 +60,18 @@ void main() {
   print(firstList); // [1, 2]
   firstList.addFirst(removedFirstValue);
   print(firstList); // [0, 1, 2]
+
+  final string = 'mississippi'.split('');
+  // Without DefaultMap
+  final counterMap1 = <String, int>{};
+  for (final char in string) {
+    if (!counterMap1.containsKey(char)) counterMap1[char] = 0;
+    counterMap1[char] = counterMap1[char]! + 1;
+  }
+  // With DefaultMap
+  final counterMap2 = DefaultMap<String, int>(0);
+  for (final char in string) counterMap2[char] += 1;
+  // Both give {m: 1, i: 4, s: 4, p: 2}
+  print(counterMap1);
+  print(counterMap2);
 }

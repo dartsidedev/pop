@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library pop;
 
+export 'src/default_map.dart';
 export 'src/int_times.dart';
 export 'src/int_times_indexed.dart';
 export 'src/list_add_first.dart';
