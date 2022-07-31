@@ -1,6 +1,6 @@
 name: pop
 description: pop.dart's a set of utility methods and classes to make Dart development intuitive, simple, and readable.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/dartsidedev
 homepage: https://github.com/vincevargadev
 issue_tracker: https://github.com/dartsidedev/pop/issues
