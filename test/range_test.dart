@@ -91,12 +91,11 @@ void main() {
 
       expect(range(5, -5, -2), [5, 3, 1, -1, -3]);
       expect(range(5, -6, -2), [5, 3, 1, -1, -3, -5]);
-
     });
 
     test(
       'returns empty iterable if steps are in incorrect direction',
-          () {
+      () {
         expect(range(2, 7, -1), isEmpty);
         expect(range(2, -5, 2), isEmpty);
       },

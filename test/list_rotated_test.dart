@@ -11,11 +11,13 @@ void main() {
       expect([1, 2, 3, 4].rotated(4), [1, 2, 3, 4]);
     });
 
-    test('returns iterable with elements shifted by 1 to the right for n == 1', () {
+    test('returns iterable with elements shifted by 1 to the right for n == 1',
+        () {
       expect([1, 2, 3, 4].rotated(1), [4, 1, 2, 3]);
     });
 
-    test('returns iterable with elements shifted by 1 to the left for n == -1 ', () {
+    test('returns iterable with elements shifted by 1 to the left for n == -1 ',
+        () {
       expect([1, 2, 3, 4].rotated(-1), [2, 3, 4, 1]);
     });
 

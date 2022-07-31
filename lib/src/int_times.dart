@@ -13,7 +13,7 @@ extension IntTimes on int {
   /// This method might change later to support return values.
   void times<T>(void Function() fn) {
     var i = 0;
-    while(i < this) {
+    while (i < this) {
       fn();
       i++;
     }

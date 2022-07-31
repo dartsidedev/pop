@@ -78,6 +78,7 @@ class DefaultMap<K, V> extends MapBase<K, V> {
   final _GetDefault<K, V> _getDefault;
 
   @override
+
   /// Gets value for [key].
   ///
   /// If the [key] is not in the map, the fallback value will be built and

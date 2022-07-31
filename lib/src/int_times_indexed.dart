@@ -13,7 +13,7 @@ extension IntTimesIndexed on int {
   /// This method might change later to support return values.
   void timesIndexed<T>(void Function(int i) fn) {
     var i = 0;
-    while(i < this) {
+    while (i < this) {
       fn(i);
       i++;
     }
