@@ -8,6 +8,7 @@ export 'src/int_times.dart';
 export 'src/int_times_indexed.dart';
 export 'src/list_add_first.dart';
 export 'src/list_add_last.dart';
+export 'src/list_entries.dart';
 export 'src/list_remove_first.dart';
 export 'src/list_reverse.dart';
 export 'src/list_rotate.dart';
