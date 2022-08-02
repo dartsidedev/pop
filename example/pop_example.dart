@@ -1,4 +1,5 @@
 import 'package:pop/pop.dart';
+import 'package:collection/collection.dart' hide ListExtensions;
 
 void main() {
   // reverse
@@ -61,6 +62,7 @@ void main() {
   firstList.addFirst(removedFirstValue);
   print(firstList); // [0, 1, 2]
 
+  // Counting letters with and without DefaultMap
   final string = 'mississippi'.split('');
   // Without DefaultMap
   final counterMap1 = <String, int>{};
@@ -74,4 +76,10 @@ void main() {
   // Both give {m: 1, i: 4, s: 4, p: 2}
   print(counterMap1);
   print(counterMap2);
+
+  // Grouping items with DefaultMap
+  final grouped = DefaultMap<String, List<int>>.generate((_) => []);
+  final entriesToBeGrouped = ['a', 'b', 'c', 'a', 'b', 'b'];
+  entriesToBeGrouped.forEachIndexed((i, e) => grouped[e]..add(i));
+  print(grouped);
 }

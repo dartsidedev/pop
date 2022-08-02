@@ -3,9 +3,12 @@ import 'dart:collection';
 /// The [DefaultMap] is a [Map]-like class that calls a factory function
 /// to supply missing values while storing values in an internal map.
 ///
+/// The [DefaultMap] is designed to help you out with missing values in a map.
+///
 /// It overrides the `[]` operator: when a value for a given key is present
 /// in the internal map, its value is returned. When the value is not set,
-/// the factory function is called to supply the default value.
+/// the factory function is called to supply the default value: it creates a
+/// new entry in the map and returns its value.
 ///
 /// Using [DefaultMap] can be useful, for example, for creating a letter counter
 /// (for example the ransom note coding exercise). See how it simplifies code,
@@ -83,8 +86,12 @@ class DefaultMap<K, V> extends MapBase<K, V> {
   ///
   /// If the [key] is not in the map, the fallback value will be built and
   /// returned.
-  V operator [](covariant K key) =>
-      _inner.containsKey(key) ? _inner[key]! : _getDefault(key);
+  V operator [](covariant K key) {
+    if (_inner.containsKey(key)) return _inner[key]!;
+    final v =  _getDefault(key);
+    _inner[key] = v;
+    return v;
+  }
 
   @override
   void operator []=(K key, V value) => _inner[key] = value;

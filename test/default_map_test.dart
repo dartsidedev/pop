@@ -12,12 +12,10 @@ void main() {
         expect(dm[999], 11);
       });
 
-      test('containsKey can be used to check if default or real value', () {
+      test('will add entry for the key that was accessed with default', () {
         final dm = DefaultMap<int, int>(11);
         expect(dm[1], 11);
-        expect(dm.containsKey(1), false);
-        dm[2] = 11;
-        expect(dm.containsKey(2), true);
+        expect(dm.containsKey(1), true);
       });
 
       test('retrieves value if key is present', () {
@@ -34,7 +32,6 @@ void main() {
         expect(dm.containsKey(2), true);
         expect(dm.length, 1);
         dm.clear();
-        expect(dm[2], 11);
         expect(dm.containsKey(2), false);
         expect(dm.length, 0);
       });
@@ -46,7 +43,6 @@ void main() {
         expect(dm.containsKey(2), true);
         expect(dm.length, 1);
         dm.remove(2);
-        expect(dm[2], 11);
         expect(dm.containsKey(2), false);
         expect(dm.length, 0);
       });
@@ -75,7 +71,6 @@ void main() {
         expect(dm.containsKey(2), true);
         expect(dm.length, 1);
         dm.clear();
-        expect(dm[2], 11);
         expect(dm.containsKey(2), false);
         expect(dm.length, 0);
       });
@@ -87,7 +82,6 @@ void main() {
         expect(dm.containsKey(2), true);
         expect(dm.length, 1);
         dm.remove(2);
-        expect(dm[2], 11);
         expect(dm.containsKey(2), false);
         expect(dm.length, 0);
       });
@@ -119,9 +113,6 @@ void main() {
         expect(dm.containsKey(3), true);
         expect(dm.length, 3);
         dm.clear();
-        expect(dm[1], 11);
-        expect(dm[2], 11);
-        expect(dm[3], 11);
         expect(dm.containsKey(1), false);
         expect(dm.containsKey(2), false);
         expect(dm.containsKey(3), false);
@@ -147,9 +138,6 @@ void main() {
         final removed2 = dm.remove(2);
         expect(removed1, 2);
         expect(removed2, 4);
-        expect(dm[1], 11);
-        expect(dm[2], 11);
-        expect(dm[3], 4);
         expect(dm.containsKey(1), false);
         expect(dm.containsKey(2), false);
         expect(dm.containsKey(3), true);
@@ -178,7 +166,6 @@ void main() {
         expect(dm[2], 4);
         expect(dm.length, 1);
         dm.clear();
-        expect(dm[2], 6);
         expect(dm.length, 0);
       });
 
@@ -190,11 +177,12 @@ void main() {
         expect(dm.length, 1);
         var removed = dm.remove(2);
         expect(removed, 8);
-        expect(dm[2], 6);
         expect(dm.containsKey(2), false);
         expect(dm.length, 0);
         removed = dm.remove(2);
         expect(removed, 6);
+        expect(dm.containsKey(2), false);
+        expect(dm.length, 0);
       });
     });
   });
