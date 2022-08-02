@@ -18,14 +18,26 @@ import 'dart:collection';
 /// final string = 'mississippi'.split('');
 /// // Without DefaultMap
 /// final counterMap = <String, int>{};
-/// for (final char in string) {
+/// for (var char in string) {
 ///   if (!counterMap.containsKey(char)) counterMap[char] = 0;
 ///   counterMap[char] = counterMap[char]! + 1;
 /// }
 ///
 /// // With DefaultMap
 /// final counterMap = DefaultMap<String, int>(0);
-/// for (final char in string) counterMap[char] += 1;
+/// for (var char in string) counterMap[char]++;
+/// ```
+///
+/// Another example where [DefaultMap] can be useful is when grouping values.
+/// Let's say we have a list of strings with duplicated items and we want to
+/// create a map with the list items as keys and all their indices in the list
+/// as values.
+///
+/// ```dart
+/// final grouped = DefaultMap<String, List<int>>.generate((_) => []);
+/// final strings = ['a', 'b', 'c', 'a', 'b', 'b'];
+/// for (var e in strings.entries) grouped[e.value].add(e.index);
+/// print(grouped) // '{a: [0, 3], b: [1, 4, 5], c: [2]}'
 /// ```
 ///
 /// The class is inspired by Python's
