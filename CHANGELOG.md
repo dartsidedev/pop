@@ -2,6 +2,7 @@
 
 - It is now configurable whether `DefaultMap` should create an entry in the map [`#1`](https://github.com/dartsidedev/pop/issues/1)
 - Add `entries` extension with index and value to `List` [`#2`](https://github.com/dartsidedev/pop/issues/2)
+- `DefaultMap` has static factory methods for the most common data structures: ints, doubles, numbers, booleans, strings, maps, and lists
 - Various improvements on example file [`#3`](https://github.com/dartsidedev/pop/issues/3), [`#4`](https://github.com/dartsidedev/pop/issues/4), [`#5`](https://github.com/dartsidedev/pop/issues/5)
 
 ## 0.1.1

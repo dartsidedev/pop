@@ -53,6 +53,77 @@ import 'dart:collection';
 /// The class is inspired by, but not a direct replication of, Python's
 /// [`defaultdict`](https://docs.python.org/3/library/collections.html#collections.defaultdict).
 class DefaultMap<K, V> extends MapBase<K, V> {
+  /// Creates a [DefaultMap] where the values are integers with a fallback
+  /// default value of 0 and the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map does not write on miss.
+  static DefaultMap<K, int> ints<K>({
+    bool writeOnMiss = false,
+  }) =>
+      DefaultMap<K, int>(0, writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are doubles with a fallback
+  /// default value of 0.0 and the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map does not write on miss.
+  static DefaultMap<K, double> doubles<K>({
+    bool writeOnMiss = false,
+  }) =>
+      DefaultMap<K, double>(0, writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are doubles with a fallback
+  /// default value of 0.0 and the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map does not write on miss.
+  static DefaultMap<K, num> nums<K>({
+    bool writeOnMiss = false,
+  }) =>
+      DefaultMap<K, num>(0, writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are strings with a fallback
+  /// default value of empty strings `''` the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map does not write on miss.
+  static DefaultMap<K, String> strings<K>({
+    bool writeOnMiss = false,
+  }) =>
+      DefaultMap<K, String>('', writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are strings with a fallback
+  /// default value of empty strings `''` the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map does not write on miss.
+  static DefaultMap<K, bool> bools<K>({
+    bool writeOnMiss = false,
+  }) =>
+      DefaultMap<K, bool>(false, writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are lists with a fallback
+  /// default value of empty lists of [E] and the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map writes on miss.
+  static DefaultMap<K, List<E>> lists<K, E>({
+    bool writeOnMiss = true,
+  }) =>
+      DefaultMap<K, List<E>>.generate((_) => [], writeOnMiss: writeOnMiss);
+
+  /// Creates a [DefaultMap] where the values are maps with a fallback
+  /// default value of empty maps of [DK] and [DV] key-value pairs
+  /// and the keys are of type [K].
+  ///
+  /// [writeOnMiss] determines whether the map creates entries upon miss.
+  /// If omitted, the map writes on miss.
+  static DefaultMap<K, Map<DK, DV>> maps<K, DK, DV>({
+    bool writeOnMiss = true,
+  }) =>
+      DefaultMap<K, Map<DK, DV>>.generate((_) => {}, writeOnMiss: writeOnMiss);
+
   /// Creates a [DefaultMap] with [defaultValue] as fallback.
   ///
   /// It uses a newly created empty map as an internal map.
