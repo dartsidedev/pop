@@ -1,6 +1,6 @@
 ## 0.1.2
 
-- When `DefaultMap` missing key accessed, it also creates an entry in the map [`#1`](https://github.com/dartsidedev/pop/issues/1)
+- It is now configurable whether `DefaultMap` should create an entry in the map [`#1`](https://github.com/dartsidedev/pop/issues/1)
 - Add `entries` extension with index and value to `List` [`#2`](https://github.com/dartsidedev/pop/issues/2)
 - Various improvements on example file [`#3`](https://github.com/dartsidedev/pop/issues/3), [`#4`](https://github.com/dartsidedev/pop/issues/4), [`#5`](https://github.com/dartsidedev/pop/issues/5)
 
